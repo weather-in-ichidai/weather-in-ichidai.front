@@ -1,0 +1,35 @@
+{
+  "name": "weather-in-ichidai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "quick": "pretty-quick --staged"
+  },
+  "dependencies": {
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^10.0.4",
+    "eslint": "^7.14.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "postcss": "^8.1.10",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0",
+    "tailwindcss": "^2.0.1",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "npm run lint"
+    }
+  }
+}
