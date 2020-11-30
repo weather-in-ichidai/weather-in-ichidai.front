@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "pretty-quick --staged"
+    "format": "pretty-quick --staged",
+    "lint": "eslint src/** --ext .ts,.tsx"
   },
   "dependencies": {
     "next": "10.0.3",
@@ -29,7 +30,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
-      "pre-push": "npm run lint"
+      "pre-push": "yarn lint"
     }
   }
 }
