@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "quick": "pretty-quick --staged"
+    "format": "pretty-quick --staged"
   },
   "dependencies": {
     "next": "10.0.3",
