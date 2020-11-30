@@ -18,11 +18,15 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "quotes": [2, "double", "avoid-escape"],
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1]
   },
   "settings": {
     "react": {
       "version": "detect"
     }
-  }
+  },
+  "root": true
 }
