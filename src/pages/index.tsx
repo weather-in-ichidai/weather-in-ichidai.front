@@ -10,21 +10,21 @@ const Index: React.FC<null> = () => {
         <div className="m-4 lg:container lg:mx-auto">
           <div className="bg-gray-700 bg-opacity-60 px-4 py-8">
             <div className="text-white">
-              {/*date*/}
+              {/* date */}
               <div className="text-center text-xl font-bold mb-8">
                 <p>12/01</p>
               </div>
 
-              {/*heading*/}
+              {/* heading */}
               <div className="flex mb-8">
-                {/*weather icon*/}
+                {/* weather icon */}
                 <div className="flex-1 text-center">
                   <Image src={"/icon/weather-day-sunny-overcast.svg"} width={80} height={80} />
                 </div>
 
-                {/*weather data*/}
+                {/* weather data */}
                 <div className="flex-1">
-                  {/*humidity*/}
+                  {/* probability of precipitation */}
                   <div className="flex justify-center mt-1 mb-4">
                     <div className="mr-2">
                       <Image src={"/icon/open-droplet.svg"} width={20} height={20} />
@@ -34,20 +34,20 @@ const Index: React.FC<null> = () => {
                     </div>
                   </div>
 
-                  {/*temperature*/}
+                  {/* temperature */}
                   <div className="text-center">
                     <p>+24℃ / - 18℃</p>
                   </div>
                 </div>
               </div>
-              {/*end heading*/}
+              {/* end heading */}
 
-              {/*clothes*/}
+              {/* clothes */}
               <div className="text-center mb-8">
                 <Image src="/clothes/default-shirt.svg" width={60} height={60} />
               </div>
 
-              {/*description*/}
+              {/* description */}
               <div className="px-8 mb-12">
                 <p>
                   東京などの太平洋側は乾燥した晴天が続きます。火の用心と風邪の予防を心がけましょう。お昼から夜にかけての気温です。全国的に1月らしい寒さが続くでしょう。東京の最高気温は11度、名古屋は8度です。
@@ -59,7 +59,7 @@ const Index: React.FC<null> = () => {
       </section>
 
       <section className="bg-gray-800 text-white px-4 py-8">
-        {/*heading*/}
+        {/* heading */}
         <div className="flex justify-center mb-4">
           <div className="mr-2">
             <Image src="/icon/material-timeline.svg" width={40} height={40} />
@@ -69,7 +69,7 @@ const Index: React.FC<null> = () => {
           </div>
         </div>
 
-        {/*chart*/}
+        {/* chart */}
         <div className="h-64 bg-red-200"></div>
       </section>
 
