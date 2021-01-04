@@ -29,7 +29,7 @@ enum ClothImage {
 
 const Index: React.FC<null> = () => {
   const client = api(aspida(fetch, { baseURL: "https://weather-in-ichidai.herokuapp.com/api" }))
-  const { data, error } = useAspidaSWR(client.weather, { query: { date: "2020-12-01" } })
+  const { data, error } = useAspidaSWR(client.weather, { query: {} })
   const [isReady, setIsReady] = useState<boolean>(false)
   const [options, setOptions] = useState<{}>()
   const [weatherImagePath, setWeatherImagePath] = useState<string>("")
