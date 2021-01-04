@@ -6,7 +6,7 @@ export type Weather = {
   maxTemp?: number
   minTemp?: number
   description?: string
-  clothing?: superCool | cool | common | warm | superWarm
+  clothing?: "superCool" | "cool" | "common" | "warm" | "superWarm"
 }
 
 export type Error = {

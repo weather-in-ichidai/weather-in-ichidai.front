@@ -122,6 +122,7 @@ components:
           type: string
           maxLength: 100
         clothing:
+          type: string
           enum:
             - superCool
             - cool
