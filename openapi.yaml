@@ -1,0 +1,142 @@
+openapi: 3.0.0
+info:
+  version: 0.1.0
+  title: Weather in Ichidai
+servers:
+  - url: "http://localhost:3000"
+paths:
+  /weather:
+    get:
+      summary: "weather"
+      description: "Returns details about the todays weather"
+      parameters:
+        - name: date
+          in: query
+          description: date which you want to get weather report, for examples, 2020-12-01
+          required: false
+          schema:
+            type: string
+            format: date
+      responses:
+        "200":
+          description: "1. Weather report data"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Weather"
+              examples:
+                Sunny:
+                  value:
+                    type: "sunny"
+                    rainfallRate: 10
+                    temperature:
+                      - 20.4
+                      - 20.2
+                      - 20.8
+                      - 21.4
+                      - 21.6
+                      - 21.2
+                      - 21.5
+                      - 22.1
+                      - 21.6
+                      - 20.8
+                      - 20.4
+                    maxTemp: 22.1
+                    minTemp: 20.2
+                    description: "東京などの太平洋側は乾燥した晴天が続きます。火の用心と風邪の予防を心がけましょう。お昼から夜にかけての気温です。全国的に1月らしい寒さが続くでしょう。東京の最高気温は11度、名古屋は8度です。"
+                    clothing: cool
+                Rainy:
+                  value:
+                    type: "rainy"
+                    rainfallRate: 90
+                    temperature:
+                      - 16.3
+                      - 16.4
+                      - 17.5
+                      - 17.6
+                      - 17.3
+                      - 16.2
+                      - 16.0
+                      - 15.3
+                      - 16.4
+                      - 15.2
+                      - 14.2
+                    maxTemp: 17.6
+                    minTemp: 14.2
+                    description: "東京などの太平洋側は乾燥した晴天が続きます。火の用心と風邪の予防を心がけましょう。お昼から夜にかけての気温です。全国的に1月らしい寒さが続くでしょう。東京の最高気温は11度、名古屋は8度です。"
+                    clothing: warm
+        "400":
+          description: 2. Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                code: 400
+                message: "Invalid query parameter of date"
+components:
+  schemas:
+    Weather:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        weather:
+          description: "Type of weather"
+          type: string
+          enum:
+            - sunny
+            - cloudy
+            - rainy
+            - rainyOrSnowy
+            - snowy
+        rainfallRate:
+          description: "Probability of precipitation"
+          type: integer
+          format: integer
+          minimum: 0
+          maximum: 100
+        temperature:
+          description: "Array of Temperatures"
+          type: array
+          items:
+            type: number
+            format: float
+            minimum: -20
+            maximum: 50
+        maxTemp:
+          description: "Maximum of air temperature"
+          type: number
+          format: float
+          minimum: -20
+          maximum: 50
+        minTemp:
+          description: "Minimum of air temperature"
+          type: number
+          format: float
+          minimum: -20
+          maximum: 50
+        description:
+          description: "Description of the weather forecast"
+          type: string
+          maxLength: 100
+        clothing:
+          type: string
+          enum:
+            - superCool
+            - cool
+            - common
+            - warm
+            - superWarm
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

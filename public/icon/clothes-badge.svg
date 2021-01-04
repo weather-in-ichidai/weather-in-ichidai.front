@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+  <g id="グループ_11" data-name="グループ 11" transform="translate(-160 -664)">
+    <path id="Icon_map-clothing-store" data-name="Icon map-clothing-store" d="M34.1,10.62a.773.773,0,0,1-.137.619l-3.881,5.774a.863.863,0,0,1-.7.346,2.008,2.008,0,0,1-.352-.036l-3.11-.763V30.24a.692.692,0,0,1-.72.72H10.08a.692.692,0,0,1-.72-.72V16.56l-2.794.77a.658.658,0,0,1-.785-.31L1.93,11.261a.726.726,0,0,1-.1-.6.7.7,0,0,1,.4-.461L10.08,6.48h3.6a.688.688,0,0,1,.72.72c0,1.483,2.081,2.534,3.564,2.534S21.6,8.69,21.6,7.2a.692.692,0,0,1,.72-.72h3.6L33.7,10.123a.775.775,0,0,1,.4.5Z" transform="translate(171.03 673.28)" fill="#fa1772"/>
+    <g id="Circle_Button" data-name="Circle Button" transform="translate(160 664)">
+      <rect id="Area_SIZE:LARGE_STATE:DEFAULT_STYLE:STYLE2_" data-name="Area [SIZE:LARGE][STATE:DEFAULT][STYLE:STYLE2]" width="56" height="56" rx="28" fill="rgba(255,255,255,0.15)"/>
+    </g>
+  </g>
+</svg>
