@@ -40,7 +40,7 @@ const Index: React.FC<null> = () => {
   const today = new Date()
 
   useEffect(() => {
-    if (data != undefined) {
+    if (data !== undefined) {
       setIsReady(true)
       setWeatherImagePath(`/icon/${WeatherImage[data.weather]}.svg`)
       setClothImagePath(`/clothes/${ClothImage[data.clothing]}.svg`)
