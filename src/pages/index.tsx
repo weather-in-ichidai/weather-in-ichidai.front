@@ -158,8 +158,14 @@ const Index: React.FC<null> = () => {
         </div>
 
         <a href="https://github.com/weather-in-ichidai">
-          <div className="rounded bg-grey-500">Github</div>
+          <Image src="/button/github.png" width={180} height={60} />
         </a>
+      </section>
+
+      <section className="bg-gray-800 text-white px-4 py-8">
+        <p className="text-white text-xs text-center">
+          © 2020 Weather in Ichidai. All Rights Reserved.
+        </p>
       </section>
     </>
   )
