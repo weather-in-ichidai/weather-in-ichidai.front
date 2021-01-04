@@ -1,8 +1,71 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Image from "next/image"
 import Header from "../components/header"
+import Highcharts from "highcharts"
+import HighchartsReact from "highcharts-react-official"
+import "highcharts/css/themes/dark-unica.css"
+import ScrollHint from "scroll-hint"
+import "scroll-hint/css/scroll-hint.css"
 
 const Index: React.FC<null> = () => {
+  const options = {
+    chart: {
+      type: "line"
+    },
+    title: {
+      text: "Monthly Average Temperature"
+    },
+    subtitle: {
+      text: "Source: WorldClimate.com"
+    },
+    xAxis: {
+      categories: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ]
+    },
+    yAxis: {
+      title: {
+        text: "Temperature (°C)"
+      }
+    },
+    plotOptions: {
+      line: {
+        dataLabels: {
+          enabled: true
+        },
+        enableMouseTracking: false
+      }
+    },
+    series: [
+      {
+        name: "Tokyo",
+        data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+      },
+      {
+        name: "London",
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }
+    ]
+  }
+
+  useEffect(() => {
+    new ScrollHint(".js-scrollable", {
+      suggestiveShadow: true,
+      offset: 0
+    })
+  }, [])
+
   return (
     <>
       <section className="bg-hero bg-cover font-sans pb-16">
@@ -70,7 +133,11 @@ const Index: React.FC<null> = () => {
         </div>
 
         {/* chart */}
-        <div className="h-64 bg-red-200"></div>
+        <div className="js-scrollable">
+          <div className="w-2screen md:w-full">
+            <HighchartsReact highcharts={Highcharts} options={options} />
+          </div>
+        </div>
       </section>
 
       <section className="bg-gray-900 text-white px-4 py-8 text-center">
