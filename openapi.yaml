@@ -82,7 +82,7 @@ components:
         - id
         - name
       properties:
-        weather:
+        weatherType:
           description: "Type of weather"
           type: string
           enum:

@@ -1,6 +1,6 @@
 /* eslint-disable */
 export type Weather = {
-  weather?: "sunny" | "cloudy" | "rainy" | "rainyOrSnowy" | "snowy"
+  weatherType?: "sunny" | "cloudy" | "rainy" | "rainyOrSnowy" | "snowy"
   rainfallRate?: number
   temperature?: number[]
   maxTemp?: number
