@@ -10,6 +10,7 @@ import useAspidaSWR from "@aspida/swr"
 import aspida from "@aspida/fetch"
 import api from "../../api/$api"
 import HashLoader from "react-spinners/HashLoader"
+import { number } from "prop-types"
 
 enum WeatherImage {
   sunny = "weather-sunny",
@@ -20,11 +21,11 @@ enum WeatherImage {
 }
 
 enum ClothImage {
-  superCool = "t-shirt",
-  cool = "shirt",
+  superCool = "down-jacket",
+  cool = "coat",
   common = "hooded",
-  warm = "coat",
-  superWarm = "down-jacket"
+  warm = "shirt",
+  superWarm = "t-shirt"
 }
 
 const Index: React.FC<null> = () => {
@@ -39,9 +40,16 @@ const Index: React.FC<null> = () => {
 
   useEffect(() => {
     if (data !== undefined) {
+      console.log(data)
       setIsReady(true)
-      setWeatherImagePath(`/icon/${WeatherImage[data.weather]}.svg`)
+      setWeatherImagePath(`/icon/${WeatherImage[data.weatherType]}.svg`)
       setClothImagePath(`/clothes/${ClothImage[data.clothing]}.svg`)
+
+      const mem: string[] = []
+
+      for (let temp of data.temperature) {
+        mem.push(String(temp))
+      }
 
       setOptions({
         chart: {
@@ -70,7 +78,12 @@ const Index: React.FC<null> = () => {
         series: [
           {
             name: "Hiroshima",
-            data: data.temperature
+            data: mem
+              .join("")
+              .split(",")
+              .map((s) => {
+                return parseFloat(s)
+              })
           }
         ]
       })
